@@ -6,6 +6,7 @@
     "Bilal Çınarlı <bcinarli@gmail.com>"
   ],
   "description": "UX Rocket Dialog: A dialog plugin",
+  "main": "lib/uxrocket.dialog.js",
   "keywords": [
     "jQuery",
     "uxrocket",
