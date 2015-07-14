@@ -4,6 +4,10 @@ Simple jQuery dialog plugin. Opens a confirmation dialog.
 
 Sample usage,
 
+```
+<a href="#" class="dialog">Open Dialog</a>
+```
+
 ```JAVASCRIPT
 $(".dialog").dialog({
     title: "Hello World!",
@@ -40,7 +44,7 @@ onConfirm     	     | Calls the function when confirm button clicked
 onCancel     	     | Calls the function when cancel button clicked
 onClose		         | Calls the function when dialog is closed
 
-### Public Metodlar
+### Public Methods
 Method						| Description
 --------------------------- | -------------------------------------------------------
 $(selector).dialog(options) | Binds the plugin 
