@@ -13,7 +13,7 @@
                 cancel   : {
                     show: true
                 },
-                close: true,
+                close    : true,
                 onConfirm: function() {
                     console.log("instance confirmed");
                 },
@@ -22,7 +22,14 @@
                 },
                 onClose  : function() {
                     console.log("instance closed");
-                }
+                },
+                allowMultiple: true
+            });
+
+            $(".dialog2").dialog({
+                title  : "Second Dialog",
+                message: "Hello world again!",
+                allowMultiple: true
             });
         });
     </script>
@@ -117,5 +124,7 @@
 </head>
 <body>
 <p>Lorem ipsum dolor <a href="#" class="dialog" id="js-dialog" data-message="This is the very first message while introducing any type of programming language">sit </a>amet</p>
+
+<p>Lorem <a href="#" class="dialog2" id="js-dialog-2">ipsum</a> dolor sitamet</p>
 </body>
 </html>

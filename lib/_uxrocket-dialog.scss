@@ -3,7 +3,7 @@
 /** -------------------------------------------
     Dialog Styles
     ------------------------------------------- **/
-#uxitd-dialog,
+.uxitd-dialog,
 #uxitd-dialog-cover {
     top: 0;
     left: 0;
@@ -12,8 +12,6 @@
 }
 
 #uxitd-dialog {
-    position: fixed;
-
     &-cover {
         position: absolute;
         z-index: 1;
@@ -33,6 +31,8 @@
 }
 
 .uxitd-dialog {
+    position: fixed;
+
     &-title {
         margin-top: 0;
     }
