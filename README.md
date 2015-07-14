@@ -4,11 +4,11 @@ Simple jQuery dialog plugin. Opens a confirmation dialog.
 
 Sample usage,
 
-```
+```html
 <a href="#" class="dialog">Open Dialog</a>
 ```
 
-```JAVASCRIPT
+```js
 $(".dialog").dialog({
     title: "Hello World!",
     message: "This is my first message",
