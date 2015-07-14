@@ -1,0 +1,25 @@
+{
+  "name": "uxrocket.dialog",
+  "version": "0.1.0",
+  "homepage": "https://github.com/uxrocket/uxrocket.dialog",
+  "authors": [
+    "Bilal Çınarlı <bcinarli@gmail.com>"
+  ],
+  "description": "UX Rocket Dialog: A dialog plugin",
+  "keywords": [
+    "jQuery",
+    "uxrocket",
+    "dialog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
