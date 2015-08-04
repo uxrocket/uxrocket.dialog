@@ -37,6 +37,24 @@ className     | null    | For advanced styling, allow to add your own style clas
 allowMultiple | false   | Allows to open more than one dialog simultaneously
 openOnload    | false   | If true, desired dialog will open on page load then, it will be available with on click event. 
 
+Data Attribute | Description
+-------------- | ------------------------------------------------------------------------
+title          | Title line of the dialog
+message        | Dialog message. Could be a plain text or html formatted text
+type           | Adds a dialog type class to the wrapper e.g. `uxitd-dialog-warning`
+confirm        | Has `show` (default: true), `text` (default: Tamam) and `className` (default: primary-action)attributes. Fires the confirm action
+cancel         | Has `show` (default: true), `text` (default: Vazgeç) and `className` (default: button) attributes. Fires the cancel action
+close          | Visibility of close icon
+blockUI        | Adds an overlay at the top of the page
+class-name     | For advanced styling, allow to add your own style class to dialog wrapper
+allow-multiple | Allows to open more than one dialog simultaneously
+open-onload    | If true, desired dialog will open on page load then, it will be available with on click event.
+on-ready       | Calls the function when plugin is ready
+on-open        | Calls the function when dialog is opened
+on-confirm     | Calls the function when confirm button clicked
+on-cancel      | Calls the function when cancel button clicked
+on-close	   | Calls the function when dialog is closed
+
 Callback			 | &nbsp;
 -------------------- | -----
 onReady              | Calls the function when plugin is ready
