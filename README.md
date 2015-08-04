@@ -35,6 +35,7 @@ close         | false   | Visibility of close icon
 blockUI       | true    | Adds an overlay at the top of the page
 className     | null    | For advanced styling, allow to add your own style class to dialog wrapper
 allowMultiple | false   | Allows to open more than one dialog simultaneously
+openOnload    | false   | If true, desired dialog will open on page load then, it will be available with on click event. 
 
 Callback			 | &nbsp;
 -------------------- | -----
@@ -48,6 +49,7 @@ onClose		         | Calls the function when dialog is closed
 Method						| Description
 --------------------------- | -------------------------------------------------------
 $(selector).dialog(options) | Binds the plugin 
+$.uxdialog(options)         | Directly opens a dialog with desired options
 $.uxdialog.version          | Shows the plugin version
 $.uxdialog.settings         | Shows the default settings
 
