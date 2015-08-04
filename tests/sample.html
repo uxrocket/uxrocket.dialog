@@ -31,6 +31,12 @@
                 message: "Hello world again!",
                 allowMultiple: true
             });
+
+            $(".dialog3").dialog({
+                title: "Open onLoad",
+                message: "This dialog will open on page load first. Then it will be available on click",
+                openOnload: true
+            });
         });
     </script>
 
@@ -126,5 +132,7 @@
 <p>Lorem ipsum dolor <a href="#" class="dialog" id="js-dialog" data-message="This is the very first message while introducing any type of programming language">sit </a>amet</p>
 
 <p>Lorem <a href="#" class="dialog2" id="js-dialog-2">ipsum</a> dolor sitamet</p>
+
+<p>Lorem ipsum <a href="#" class="dialog3" id="js-dialog-3">dolor</a> sitamet</p>
 </body>
 </html>
