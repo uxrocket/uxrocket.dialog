@@ -1,0 +1,61 @@
+{
+  "name": "uxrocket.dialog",
+  "version": "0.3.0",
+  "description": "jQuery based Dialog plugin",
+  "main": "lib/uxrocket.dialog.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "chai": "^3.3.0",
+    "gulp-header": "^1.7.1",
+    "gulp-csslint": "^0.2.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-mocha-phantomjs": "^0.10.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "jquery": "^2.1.4",
+    "phantomjs": "^1.9.18"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csslint": "^0.2.0",
+    "gulp-header": "^1.7.1",
+    "gulp-jshint": "^1.11.2",
+    "gulp-mocha-phantomjs": "^0.10.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "mocha": "^2.3.3",
+    "phantomjs": "^1.9.18"
+  },
+  "scripts": {
+    "test": "gulp mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxrocket/uxrocket.dialog.git"
+  },
+  "keywords": [
+    "jQuery",
+    "uxrocket",
+    "dialog"
+  ],
+  "author": "Bilal Cinarli <bcinarli@gmail.com>",
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uxrocket/uxrocket.dialog/issues"
+  },
+  "homepage": "https://github.com/uxrocket/uxrocket.dialog#readme"
+}
