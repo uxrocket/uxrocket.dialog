@@ -22,6 +22,22 @@ $(".dialog").dialog({
 });
 ```
 
+Direct usage for opening on load or after a callback
+```js
+$.uxrdialog({
+    title: "Hello World!",
+    message: "This is my first message",
+    confirm: {
+        text: "OK",
+        className: "confirm-button"
+    }
+    onConfirm: function(){
+        form.submit();
+    }
+});
+```
+
+
 ### Options
 Property	  | Default | Description
 ------------- | ------- | ------------------------------------------------------------------------
@@ -67,8 +83,8 @@ onClose		         | Calls the function when dialog is closed
 Method						| Description
 --------------------------- | -------------------------------------------------------
 $(selector).dialog(options) | Binds the plugin 
-$.uxdialog(options)         | Directly opens a dialog with desired options
-$.uxdialog.version          | Shows the plugin version
-$.uxdialog.settings         | Shows the default settings
+$.uxrdialog(options)        | Directly opens a dialog with desired options
+$.uxrdialog.version         | Shows the plugin version
+$.uxrdialog.settings        | Shows the default settings
 
 
