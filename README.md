@@ -6,6 +6,8 @@ Sample usage,
 
 ```html
 <a href="#" class="dialog">Open Dialog</a>
+<a href="#sample-hidden-content" class="dialog">Open Dialog</a>
+<a href="http://sample-template-file" class="dialog">Open Dialog</a>
 ```
 
 ```js
@@ -53,6 +55,7 @@ className     | null    | For advanced styling, allow to add your own style clas
 allowMultiple | false   | Allows to open more than one dialog simultaneously
 openOnload    | false   | If true, desired dialog will open on page load then, it will be available with on click event. 
 
+
 Data Attribute | Description
 -------------- | ------------------------------------------------------------------------
 title          | Title line of the dialog
@@ -70,6 +73,10 @@ on-open        | Calls the function when dialog is opened
 on-confirm     | Calls the function when confirm button clicked
 on-cancel      | Calls the function when cancel button clicked
 on-close	   | Calls the function when dialog is closed
+confirm-text   | Custom confirm button text
+cancel-text    | Custom cancel button text
+confirm-class  | For advanced styling, allow to add your own style class to confirm button
+cancel-class   | For advanced styling, allow to add your own style class to cancel button
 
 Callback			 | &nbsp;
 -------------------- | -----
