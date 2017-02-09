@@ -17,7 +17,7 @@ $(".dialog").dialog({
     confirm: {
         text: "OK",
         className: "confirm-button"
-    }
+    },
     onConfirm: function(){
         form.submit();
     }
@@ -32,7 +32,7 @@ $.uxrdialog({
     confirm: {
         text: "OK",
         className: "confirm-button"
-    }
+    },
     onConfirm: function(){
         form.submit();
     }

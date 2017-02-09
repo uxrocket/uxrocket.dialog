@@ -1,8 +1,8 @@
 /*! UX Rocket Dialog 
  *  jQuery based Dialog plugin 
  *  @author Bilal Cinarli <bcinarli@gmail.com> 
- *  @version 0.3.0 
- *  @build Fri Sep 04 2015 10:29:12 GMT+0300 (EEST) 
+ *  @version 0.4.0 
+ *  @build Thu Feb 09 2017 15:42:03 GMT+0300 (+03) 
  */
 /* @author Bilal Cinarli */
 /** -------------------------------------------
@@ -14,6 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 
 #uxr-dialog-cover {
@@ -32,9 +33,8 @@
   padding: 15px;
   border-radius: 3px;
   background-color: #fff;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-      -ms-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
   text-align: center;
 }
 

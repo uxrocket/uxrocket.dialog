@@ -10,6 +10,11 @@
         defaults = {
             title        : '',
             message      : '',
+            confirmText  : null,
+            cancelText   : null,
+            confirmClass : null,
+            cancelClass  : null,
+
             type         : 'warning',
             confirm      : {
                 show     : true,
@@ -21,6 +26,8 @@
                 className: 'button',
                 text     : 'Vazgeç'
             },
+
+            test         : this.type,
             // other buttons
             buttons      : {},
             // close icon
@@ -48,6 +55,7 @@
                 ready: 'ready'
             }
         };
+
 
     var Dialog = function(el, options, selector) {
         this._name = rocketName;
@@ -80,6 +88,7 @@
         this.bindUIActions();
 
         this.$el.addClass(utils.getClassname('ready'));
+
         this.prepare();
 
         this.emitEvent('ready');
@@ -101,7 +110,11 @@
                 ux.close();
             }
 
-            ux.open(_this);
+            if(typeof $(this).attr('href') === 'undefined' || $(this).attr('href') === '' || $(this).attr('href').charAt(0) === '#'){
+                ux.open(_this);
+            }else{
+                ux.open(_this,this.href);
+            }
         });
 
         $body.on(events.click, '#uxr-dialog-' + _this._instance + ' .uxr-dialog-confirm-button', function(e) {
@@ -122,17 +135,22 @@
         });
     };
 
-    Dialog.prototype.prepare = function() {
+    Dialog.prototype.prepare = function(content) {
         var html = '' +
-                   '<div id="uxr-dialog-' + this._instance + '" class="uxr-dialog uxr-dialog-' + this.options.type + ' ' + this.options.className + '">';
+            '<div id="uxr-dialog-' + this._instance + '" class="uxr-dialog uxr-dialog-' + this.options.type + ' ' + this.options.className + '">';
+
+
+        if(typeof this.options.confirm === 'string'){
+
+        }
 
         if(this.options.blockUI === true && this.options.allowMultiple === false) {
             html += '\n' +
-                    '<div id="uxr-dialog-cover"></div>';
+                '<div id="uxr-dialog-cover"></div>';
         }
 
         html += '\n' +
-                '<div id="uxr-dialog-content" class="note dialog-note note-' + this.options.type + '">';
+            '<div id="uxr-dialog-content" class="note dialog-note note-' + this.options.type + '">';
 
         if(this.options.title !== '') {
             html += '<h3 class="uxr-dialog-title note-title">' + this.options.title + '</h3>';
@@ -142,11 +160,35 @@
             html += '<div class="uxr-dialog-content note-content">' + this.options.message + '</div>';
         }
 
+        if(typeof this.$el.attr('href') !== 'undefined') {
+            if(this.$el.attr('href').charAt(0) === '#'){
+                var content = $(this.$el.attr('href')).html();
+
+                html += '<div class="uxr-dialog-content note-content">'+content+'</div>';
+            }else{
+                html += '<div class="uxr-dialog-content note-content"></div>';
+            }
+
+        }
+
         if(this.options.confirm.show || this.options.cancel.show || this.options.buttons.length > 0) {
+
+            var buttons = {
+                confirm: {
+                    text: this.options.confirmText || this.options.confirm.text,
+                    class:this.options.confirmClass || this.options.confirm.className
+                },
+                cancel: {
+                    text:this.options.cancelText || this.options.cancel.text,
+                    class:this.options.cancelClass || this.options.cancel.className
+                }
+            };
+
+
             html += '<div class="uxr-dialog-buttons note-buttons">';
 
             if(this.options.cancel.show) {
-                html += '<a href="#" class="uxr-dialog-button uxr-dialog-cancel-button ' + this.options.cancel.className + '">' + this.options.cancel.text + '</a>';
+                html += '<a href="#" class="uxr-dialog-button uxr-dialog-cancel-button ' + buttons.cancel.class + '">' + buttons.cancel.text+ '</a>';
             }
 
             $.each(this.options.buttons, function(item) {
@@ -154,7 +196,7 @@
             });
 
             if(this.options.confirm.show) {
-                html += '<a href="#" class="uxr-dialog-button uxr-dialog-confirm-button ' + this.options.confirm.className + '">' + this.options.confirm.text + '</a>';
+                html += '<a href="#" class="uxr-dialog-button uxr-dialog-confirm-button ' + buttons.confirm.class + '">' + buttons.confirm.text + '</a>';
             }
 
 
@@ -166,7 +208,7 @@
         }
 
         html += '   </div>' + // end of dialog content
-                '</div>';
+            '</div>';
 
         this.dialog = html;
     };
@@ -221,6 +263,13 @@
 
         getClassname: function(which) {
             return ns.prefix + ns.name + '-' + ns.classes[which];
+        },
+
+        getAjaxContent: function(url,instance){
+            $.get(url,function(data){
+                    $(instance).find('.uxr-dialog-content').html(data);
+                }
+            );
         }
     };
 
@@ -260,13 +309,16 @@
         }
     };
 
-    ux.open = function(dialog) {
+    ux.open = function(dialog,href) {
         $('body').append(dialog.dialog);
         utils.callback(dialog.options.onOpen);
+        if(href){
+            utils.getAjaxContent(href,'#uxr-dialog-'+dialog._instance);
+        }
     };
 
     // version
-    ux.version = '0.3.0';
+    ux.version = '0.4.0';
 
     // settings
     ux.settings = defaults;
