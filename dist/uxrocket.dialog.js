@@ -163,7 +163,7 @@
         if(typeof this.$el.attr('href') !== 'undefined') {
             if(this.$el.attr('href').charAt(0) === '#'){
                 var content = $(this.$el.attr('href')).html();
-
+                if( !content ){ return; }
                 html += '<div class="uxr-dialog-content note-content">'+content+'</div>';
             }else{
                 html += '<div class="uxr-dialog-content note-content"></div>';
