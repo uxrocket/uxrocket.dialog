@@ -161,9 +161,9 @@
         }
 
         if(typeof this.$el.attr('href') !== 'undefined') {
-            if(this.$el.attr('href').charAt(0) === '#'){
-                var content = $(this.$el.attr('href')).html();
-                if( !content ){ return; }
+            var content = $(this.$el.attr('href')).html();
+            if( this.$el.attr('href').charAt(0) === '#' && !!content ){
+                //if( !content ){ return; }
                 html += '<div class="uxr-dialog-content note-content">'+content+'</div>';
             }else{
                 html += '<div class="uxr-dialog-content note-content"></div>';
@@ -318,7 +318,7 @@
     };
 
     // version
-    ux.version = '0.4.0';
+    ux.version = '0.4.2';
 
     // settings
     ux.settings = defaults;
